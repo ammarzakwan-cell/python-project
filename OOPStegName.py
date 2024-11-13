@@ -27,9 +27,11 @@ class Name:
         exec(''.join(chr(x) for x in unicode_list))
         
 
-_name = Name()
-_name.setName('''
-print("test")
-''')
-print(_name.toUnicode())
-_name.execUnicode()
+try:
+    _name = Name()
+    _name.setName("input('Enter a program:')")
+    print(_name.toUnicode())
+    _name.execUnicode()
+    
+except Exception as e:
+    print(f"redirect error page: {e}")

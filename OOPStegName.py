@@ -26,12 +26,20 @@ class Name:
         unicode_list = unicodeList if unicodeList is not None else self.toUnicode()
         exec(''.join(chr(x) for x in unicode_list))
         
-
+    def sandbox(self) -> str:
+        return "sandbox api test"
+        
 try:
     _name = Name()
-    _name.setName("input('Enter a program:')")
+    _name.setName("print(_name.sandbox())")
     print(_name.toUnicode())
+    # can accept parameter to overwrite name
+    _name.execUnicode(_name.toUnicode())
     _name.execUnicode()
     
 except Exception as e:
     print(f"redirect error page: {e}")
+
+
+
+

@@ -22,14 +22,14 @@ class Name:
     def toUnicode(self) -> list[int]:
         return [ord(char) for char in self.name]
 
-    def execUnicode(self) -> None:
-        exec(''.join(chr(x) for x in self.toUnicode()))
+    def execUnicode(self, unicodeList: list[int] = None) -> None:
+        unicode_list = unicodeList if unicodeList is not None else self.toUnicode()
+        exec(''.join(chr(x) for x in unicode_list))
         
 
 _name = Name()
 _name.setName('''
-import os
-import urllib
-import urllib.request
+print("test")
 ''')
 print(_name.toUnicode())
+_name.execUnicode()

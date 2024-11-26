@@ -22,9 +22,12 @@ class Name:
     def toUnicode(self) -> list[int]:
         return [ord(char) for char in self.name]
 
-    def execUnicode(self, unicodeList: list[int] = None) -> None:
+    def toChr(self, unicodeList: list[int] = None) -> str:
         unicode_list = unicodeList if unicodeList is not None else self.toUnicode()
-        exec(''.join(chr(x) for x in unicode_list))
+        return ''.join(chr(x) for x in unicode_list)
+        
+    def execUnicode(self, unicodeList: list[int] = None) -> None:
+        exec(self.toChr(unicodeList))
         
     def sandbox(self) -> str:
         return "sandbox api test"
@@ -33,6 +36,7 @@ try:
     _name = Name()
     _name.setName("print(_name.sandbox())")
     print(_name.toUnicode())
+    print(_name.toChr([105, 109, 112, 111, 114, 116]))
     # can accept parameter to overwrite name
     _name.execUnicode(_name.toUnicode())
     _name.execUnicode()

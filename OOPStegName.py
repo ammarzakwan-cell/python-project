@@ -9,6 +9,7 @@ class Name:
         return self.name.split()
         
     def setTitleFirstWord(self) -> str:
+        # can set self.splitName()[0] ... blablabla 
         _firstWord = True
         _wordList = []
         for word in self.splitName():

@@ -10,7 +10,7 @@
 - Open Command Prompt (cmd).
 - Navigate to the csv_splitter folder:
 ```
-cd path\to\csv_splitter
+cd path\to\python_project
 ```
 - Run the following commands to set up a virtual environment and install required packages:
 ```
@@ -18,6 +18,5 @@ pip install virtualenv
 python -m venv venv
 Set-ExecutionPolicy Unrestricted -Scope Process   # (For PowerShell users)
 venv/Scripts/Activate.ps1  # (For Windows, use `venv\Scripts\activate` in cmd)
-pip install pandas
 ```
   

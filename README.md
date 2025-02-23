@@ -8,7 +8,7 @@
 
 ## 2. Install Virtual Environment & Dependencies
 - Open Command Prompt (cmd).
-- Navigate to the csv_splitter folder:
+- Navigate to the python_project folder:
 ```
 cd path\to\python_project
 ```
